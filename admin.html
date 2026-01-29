@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผู้ดูแลระบบ - Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>ระบบแจ้งซ่อม - ผู้ดูแลระบบ</h1>
+            <div class="admin-actions">
+                <button id="logoutBtn" class="admin-btn">ออกจากระบบ</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Menu -->
+        <nav class="admin-menu">
+            <ul>
+                <li class="active">
+                    <a href="#requests">รายการแจ้งซ่อม</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Repair Requests Section -->
+        <section id="requests" class="admin-section">
+            <h2>รายการแจ้งซ่อมทั้งหมด</h2>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>จำนวนคำขอทั้งหมด</h3>
+                    <p id="totalRequests" class="stat-number">0</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="requestsTable">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>วันที่แจ้ง</th>
+                            <th>ชื่อผู้แจ้ง</th>
+                            <th>อีเมล</th>
+                            <th>สถานที่</th>
+                            <th>รายละเอียด</th>
+                            <th>รูปภาพ</th>
+                            <th>การดำเนินการ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requestsTableBody">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="noRequests" class="no-data">
+                ไม่มีรายการแจ้งซ่อม
+            </div>
+        </section>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content image-modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Repair Image">
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
