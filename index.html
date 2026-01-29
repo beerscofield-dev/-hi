@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบแจ้งซ่อม - Repair Request System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>ระบบแจ้งซ่อม</h1>
+            <button id="adminLoginBtn" class="admin-btn">เข้าสู่ระบบผู้ดูแล</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="form-section">
+            <h2>แบบฟอร์มแจ้งซ่อม</h2>
+            <form id="repairForm">
+                <div class="form-group">
+                    <label for="reporterName">ชื่อผู้แจ้ง *</label>
+                    <input type="text" id="reporterName" name="reporterName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">อีเมล *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">สถานที่ *</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="details">รายละเอียด *</label>
+                    <textarea id="details" name="details" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">อัพโหลดรูปภาพประกอบ</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">ส่งคำขอแจ้งซ่อม</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Admin Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>เข้าสู่ระบบผู้ดูแล</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="submit-btn">เข้าสู่ระบบ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        บันทึกคำขอแจ้งซ่อมเรียบร้อยแล้ว!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
